@@ -65,14 +65,6 @@
       ],
       "drc_exclusions": [
         [
-          "solder_mask_bridge|126100000|90107500|25d77c47-5fa4-4734-ad57-4ece9e858198|564475b7-087b-4ebc-86da-e82adf045d2c",
-          ""
-        ],
-        [
-          "solder_mask_bridge|126100000|98207500|1accd143-17c5-4a9c-8dc4-e67e7c7a00bc|564475b7-087b-4ebc-86da-e82adf045d2c",
-          ""
-        ],
-        [
           "solder_mask_bridge|129505300|92707900|b2959bca-8bc3-4b30-8dfb-6e995ff29036|4556c2e4-98f6-4f1a-97e9-a040131f9ecf",
           ""
         ],
@@ -607,12 +599,6 @@
         "wire_width": 6
       },
       {
-        "name": "I2C",
-        "pcb_color": "rgb(132, 0, 132)",
-        "priority": 2,
-        "schematic_color": "rgba(0, 0, 0, 0.000)"
-      },
-      {
         "bus_width": 12,
         "clearance": 0.2,
         "diff_pair_gap": 0.25,
@@ -621,8 +607,8 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power High",
-        "pcb_color": "rgb(255, 153, 0)",
-        "priority": 3,
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.8,
         "via_diameter": 1.0,
@@ -638,25 +624,13 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "Power Low",
-        "pcb_color": "rgb(0, 0, 194)",
-        "priority": 4,
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.4,
         "via_diameter": 0.8,
         "via_drill": 0.4,
         "wire_width": 6
-      },
-      {
-        "name": "Power Medium",
-        "pcb_color": "rgb(147, 0, 194)",
-        "priority": 1,
-        "schematic_color": "rgba(0, 0, 0, 0.000)"
-      },
-      {
-        "name": "RS485",
-        "pcb_color": "rgb(255, 255, 0)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)"
       },
       {
         "bus_width": 12,
@@ -668,56 +642,43 @@
         "microvia_drill": 0.1,
         "name": "Signal",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 5,
+        "priority": 3,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.2,
         "via_diameter": 0.4,
         "via_drill": 0.2,
         "wire_width": 6
+      },
+      {
+        "name": "VCC",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)"
       }
     ],
     "meta": {
       "version": 4
     },
-    "net_colors": null,
+    "net_colors": {
+      "+3V3": "rgb(0, 0, 194)",
+      "/ISO_3V3": "rgb(0, 0, 194)",
+      "/ORP/ISO_-2V5": "rgb(0, 132, 0)",
+      "/ORP/ISO_-3V3": "rgb(0, 0, 72)",
+      "/ORP/ISO_2V5": "rgb(0, 255, 0)",
+      "/ORP/ISO_SCL": "rgb(194, 0, 194)",
+      "/ORP/ISO_SDA": "rgb(194, 0, 194)",
+      "/SCL": "rgb(194, 0, 194)",
+      "/SDA": "rgb(194, 0, 194)"
+    },
     "netclass_assignments": null,
-    "netclass_patterns": [
-      {
-        "netclass": "Power High",
-        "pattern": "*24V*"
-      },
-      {
-        "netclass": "Power Medium",
-        "pattern": "*5V*"
-      },
-      {
-        "netclass": "Power Medium",
-        "pattern": "*VBUS"
-      },
-      {
-        "netclass": "I2C",
-        "pattern": "*SDA*"
-      },
-      {
-        "netclass": "I2C",
-        "pattern": "*SCL*"
-      },
-      {
-        "netclass": "RS485",
-        "pattern": "*RS_*"
-      },
-      {
-        "netclass": "Power Low",
-        "pattern": "*3V3*"
-      }
-    ]
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "output/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "Pool-Spa-Controller-V2.step",
@@ -836,7 +797,7 @@
       "workbook_filename": ""
     },
     "page_layout_descr_file": "",
-    "plot_directory": "",
+    "plot_directory": "output/",
     "space_save_all_events": true,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
