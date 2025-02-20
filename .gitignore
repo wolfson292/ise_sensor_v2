@@ -34,3 +34,6 @@ replicate_layout.log
 
 # Production Exports
 production
+output
+board2pdf*
+plots
